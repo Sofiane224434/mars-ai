@@ -637,7 +637,10 @@ Ce workflow déploie automatiquement sur push `main` (et peut être lancé manue
 - `VPS_PORT` (ex: `2222`)
 - `VPS_USER` (ex: `debian`)
 - `VPS_SSH_KEY` (clé privée SSH dédiée au déploiement)
-- `VPS_HOST_FINGERPRINT` (empreinte de la clé hôte SSH)
+
+Optionnel:
+
+- `VPS_HOST_FINGERPRINT` (utile si vous forcez une empreinte hôte spécifique)
 
 ### Variables GitHub (Repository variables)
 
