@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import Button from '../ui/Button.jsx';
+import Button from '../UI/Button.jsx';
 import useFestivalPhase from '../../hooks/useFestivalPhase.js';
 
 function Navbar({ isRounded = false }) {
