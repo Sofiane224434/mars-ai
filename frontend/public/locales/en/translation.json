@@ -1,0 +1,101 @@
+{
+  "header": {
+    "title": "MarsAi",
+    "language": {
+      "french": "French",
+      "english": "English",
+      "change": "Change language"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About us",
+    "faq": "FAQ",
+    "participate": "Participate",
+    "movies": "Movies"
+  },
+  "footer": {
+    "collaborator": "In collaboration with",
+    "textcontact": "Stay in touch",
+    "newsletter": "Newsletter subscription",
+    "emailplaceholder": "Your e-mail address",
+    "subscribe": "Subscribe to our newsletter",
+    "rights": "All rights reserved"
+  },
+  "home": {
+    "HeroSection": "People at the heart of AI",
+    "titles1": "1 MINUTE",
+    "description1": "Each film lasts a maximum of 1 minute",
+    "titles2": "1 THEME",
+    "description2": "Each film has a common theme: A desirable future",
+    "titles3": "1 WINNER",
+    "description3": "One big winner!",
+    "PodiumGraphic": "From a selection of over 20,000 videos",
+    "quickAccess": {
+      "title": "Explore the festival",
+      "description": "Quickly access the key festival pages to discover the films, understand MarsAI, and find practical information.",
+      "cards": {
+        "movies": {
+          "description": "Explore selected short films, follow the current phase, and discover the winners soon.",
+          "cta": "See movies"
+        },
+        "about": {
+          "description": "Understand the festival's vision, goals, and the unique format of the competition.",
+          "cta": "Discover MarsAI"
+        },
+        "faq": {
+          "description": "Get practical information at a glance: access, schedule, workshops, and organization.",
+          "cta": "Read FAQ"
+        }
+      }
+    }
+  },
+  "about": {
+    "blocks": {
+      "block1": {
+        "title": "What is MarsAI?",
+        "text": "A festival of <strong>1-minute short films</strong> made with <strong>AI</strong>\n\nFree <strong>conferences and workshops</strong>\n\n<strong>Experience sharing with AI experts</strong> for professionals and the general public\n\n<strong>2 days of festival in Marseille</strong>, at the heart of AI"
+      },
+      "block2": {
+        "title": "Festival objective",
+        "text": "Put people at the heart of creating AI-generated works\n\nChallenge participants' creativity through a <strong>very short format</strong>\n\nLeverage the power of AI around one theme: <strong>Imagine desirable futures</strong>"
+      },
+      "block3": {
+        "title": "Selection format",
+        "text": "<strong>2-month open call</strong>\n\n<strong>50 one-minute short films</strong> selected for the official competition\n\nOnline distribution of works (web and social networks)\n\n<strong>Screenings in cinemas</strong> and film festivals"
+      },
+      "block4": {
+        "title": "Venue",
+        "subtitle": "La Plateforme",
+        "text": "<strong>4,000 m2 of spaces</strong> in central Marseille to host the event"
+      }
+    }
+  },
+  "faq": {
+    "informations-title": "Practical information:",
+    "informations-content": "When and where does the MarsAi festival take place? The festival will take place over two days, Friday June 5 and Sunday June 7. The event takes place at the Dock des Suds (12 Rue Urbain V, 13002 Marseille). Doors open at 10:00 and close at 19:00.",
+    "question1": "How can I get there?",
+    "answer1-1": "Public transport: Metro line 2 (Désirée Clary stop) or Tramway T2/T3 (Arenc Le Silo stop).",
+    "answer1-2": "By car: Public pay parking lots (Indigo Quai d'Arenc, Espercieux) are located in the immediate vicinity.",
+    "answer1-3": "Soft mobility: A parking area for bicycles and scooters is available on the forecourt.",
+    "answer1-4": "Is the site accessible to people with reduced mobility (PRM)? Yes, Dock des Suds is on one level and fully accessible. Adapted sanitary facilities are available within the building.",
+    "access-title": "🎟️ Access and Registration",
+    "question2": "Do I need to buy or reserve a ticket?",
+    "answer2": "No, access to the MarsAi festival is entirely free and ticket-free. You can come at any time you like.",
+    "question3": "Is there a maximum gauge?",
+    "answer3": "Admission is free, but subject to the capacity of the Dock des Suds. In the event of very large crowds, a queue may be set up at the entrance for safety reasons.",
+    "programation-title": "🤖 Programming and Workshops 🤖",
+    "question4": "Who is the MarsAi festival for?",
+    "answer4": "The festival has something for everyone! Whether you're a tech professional, a student, or simply curious to discover the latest advances in artificial intelligence, you'll find conferences and demonstrations adapted to your level.",
+    "question5": "Do I need to register in advance for the hands-on workshops?",
+    "answer5": " General admission is free, but some specific workshops require on-site registration at the festival reception on the day. Places are allocated on a first-come, first-served basis.",
+    "disclaimer": "The answer to your question may be found below!",
+    "title": "Frequently Asked Questions (FAQ) - MarsAi Festival"
+  },
+  "movies": {
+    "empty-title": "Coming soon",
+    "empty-description": "The 50 films selected by the jury will be displayed here at the end of the submission phase. Check back soon!",
+    "current-phase-label": "Current phase",
+    "current-phase": "Submission period"
+  }
+}
