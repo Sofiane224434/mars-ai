@@ -67,10 +67,12 @@ app.use((req, res, next) => {
 });
 
 //# Routes
-// Mettre à jour la route racine pour une réponse JSON plus cohérente pour une API
-app.get("/", (req, res) => {
-  res.json({ message: 'MarsAI API (ES Modules)', status: 'online' });
-});
+// Renvoie l'état API uniquement quand le frontend n'est pas servi par ce process.
+if (!canServeFrontend) {
+  app.get("/", (req, res) => {
+    res.json({ message: 'MarsAI API (ES Modules)', status: 'online' });
+  });
+}
 
 app.use("/api/auth", authRoutes);
 app.use("/api", movieRoutes);
