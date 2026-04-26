@@ -3,7 +3,21 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import Button from '../../components/UI/Button.jsx';
 
-const API_URL = 'http://localhost:5000/api';
+const resolveApiBaseUrl = () => {
+    const configured = import.meta.env.VITE_API_URL;
+    if (configured) {
+        return configured.endsWith('/api') ? configured : `${configured.replace(/\/$/, '')}/api`;
+    }
+
+    // En production, le frontend et l'API sont servis sur le meme domaine.
+    if (import.meta.env.PROD) {
+        return '/api';
+    }
+
+    return 'http://localhost:5000/api';
+};
+
+const API_URL = resolveApiBaseUrl();
 
 function Auth() {
     // Le token saisi manuellement dans le champ

@@ -205,7 +205,7 @@ NODE_ENV=development
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=votre_password
-DB_NAME=marsai
+DB_NAME=marsaiazim
 
 # JWT
 JWT_SECRET=votre_secret_jwt_tres_securise

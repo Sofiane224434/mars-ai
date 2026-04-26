@@ -9,3 +9,4 @@
 # Ignore les fichier documentations utilisateurs
 .help/*
 /conception/aides
+/contexte-projet.md
