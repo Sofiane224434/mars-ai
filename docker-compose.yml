@@ -1,0 +1,14 @@
+services:
+  mars-ai-api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: mars-ai-api
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+    ports:
+      - "127.0.0.1:5010:5000"
+    volumes:
+      - ./backend/uploads:/app/backend/uploads

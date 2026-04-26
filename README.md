@@ -653,6 +653,12 @@ Optionnel:
 - Le dossier contient un fichier compose (`docker-compose.yml` ou équivalent)
 - Les fichiers locaux à préserver (`.env`, etc.) ne sont pas versionnés
 
+### Stack déployée actuellement
+
+- Service `mars-ai-api` (backend Node.js)
+- Port local VPS: `127.0.0.1:5010` -> conteneur `5000`
+- Fichier compose: `docker-compose.yml`
+
 ### Flux de déploiement
 
 1. SSH vers le VPS avec la clé de déploiement
