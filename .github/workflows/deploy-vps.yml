@@ -58,7 +58,10 @@ jobs:
             git fetch --prune origin
             git checkout "$TARGET_BRANCH"
             git reset --hard "origin/$TARGET_BRANCH"
-            git clean -fd
+            git clean -fd \
+              -e backend/.env \
+              -e backend/uploads \
+              -e backend/uploads/**
 
             if [ -n "${VPS_COMPOSE_PROJECT:-}" ]; then
               docker compose -p "$VPS_COMPOSE_PROJECT" up -d --build
