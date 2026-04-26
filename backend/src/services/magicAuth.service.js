@@ -149,11 +149,7 @@ export const issueMagicLinkForEmail = async ({
 export const exchangeMagicTokenForSession = async ({ token }) => {
   const adminEnvToken = getAdminEnvToken();
 
-  if (
-    process.env.NODE_ENV !== "production" &&
-    adminEnvToken &&
-    token === adminEnvToken
-  ) {
+  if (adminEnvToken && token === adminEnvToken) {
     const adminEmail = getAdminEmail();
     if (!adminEmail) {
       throw new AuthConfigError(
