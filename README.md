@@ -16,6 +16,7 @@ Application web fullstack pour le festival MarsAI : soumission de films, accès 
 - [API Endpoints](#-api-endpoints)
 - [Stockage médias (Scaleway S3)](#-stockage-médias-scaleway-s3)
 - [Scripts disponibles](#-scripts-disponibles)
+- [Déploiement VPS (GitHub Actions)](#-déploiement-vps-github-actions)
 - [Troubleshooting](#-troubleshooting)
 - [Conventions de commit](#-conventions-de-commit)
 - [Licence](#-licence)
@@ -616,6 +617,45 @@ Le backend retourne ensuite les informations S3 + YouTube.
 | `npm run build` | Crée un build optimisé pour la production | Production |
 | `npm run preview` | Prévisualise le build de production localement | Test production |
 | `npm run lint` | Vérifie le code avec ESLint | Quality |
+
+---
+
+## 🚀 Déploiement VPS (GitHub Actions)
+
+Workflow ajouté: `.github/workflows/deploy-vps.yml`
+
+Ce workflow déploie automatiquement sur push `main` (et peut être lancé manuellement), avec des garde-fous pour ne pas impacter les autres projets du VPS:
+
+- il agit uniquement dans le dossier du projet (`VPS_APP_DIR`)
+- il vérifie que le `remote.origin` correspond bien au repo cible
+- il n'exécute jamais `docker compose down`
+- il relance uniquement la stack compose du projet (`docker compose up -d --build`)
+
+### Secrets GitHub requis
+
+- `VPS_HOST` (ex: `51.210.244.46`)
+- `VPS_PORT` (ex: `2222`)
+- `VPS_USER` (ex: `debian`)
+- `VPS_SSH_KEY` (clé privée SSH dédiée au déploiement)
+- `VPS_HOST_FINGERPRINT` (empreinte de la clé hôte SSH)
+
+### Variables GitHub (Repository variables)
+
+- `VPS_APP_DIR` (ex: `/home/debian/apps/mars-ai`)
+- `VPS_COMPOSE_PROJECT` (optionnel, ex: `mars-ai`)
+
+### Prérequis côté VPS
+
+- Le repo est déjà cloné dans `VPS_APP_DIR`
+- Le dossier contient un fichier compose (`docker-compose.yml` ou équivalent)
+- Les fichiers locaux à préserver (`.env`, etc.) ne sont pas versionnés
+
+### Flux de déploiement
+
+1. SSH vers le VPS avec la clé de déploiement
+2. `git fetch --prune`, `git reset --hard origin/<branche>`, `git clean -fd`
+3. `docker compose up -d --build`
+4. Affichage de `docker compose ps`
 
 ---
 
