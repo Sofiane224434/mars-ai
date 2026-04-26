@@ -1,0 +1,36 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "movies": "Films",
+        "about": "À propos",
+        "faq": "FAQ",
+        "participate": "Participer"
+    },
+    "home": {
+        "HeroSection": "L'humain au coeur de l'IA",
+        "titles1": "1 MINUTE",
+        "description1": "Chaque film dure 1 minute maximum", 
+        "titles2": "1 THÈME",
+        "description2": "Chaque film a pour thème commun : Un futur souhaitable",
+         "titles3": "1 GAGNANT",
+        "description3": "Un seul grand gagnant !",
+        "PodiumGraphic": "Sur une sélection de plus de 20 000 vidéos"
+
+    },
+    "header": {
+        "title": "MarsAi",
+        "language": {
+            "change": "Changer la langue",
+            "french": "Français",
+            "english": "Anglais"
+        }
+    },
+    "footer": {
+        "collaborator": "En collaboration avec",
+        "textcontact": "Restez en contact",
+        "newsletter": "Inscription à la newsletter",
+        "emailplaceholder": "Votre adresse e-mail",
+        "subscribe": "S'inscrire à la newsletter",
+        "rights": "Tous droits réservés"
+    }
+}
