@@ -8,3 +8,4 @@
 /uploads/submissions
 # Ignore les fichier documentations utilisateurs
 .help/*
+/conception/aides
