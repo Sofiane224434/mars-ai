@@ -10,7 +10,8 @@ services:
     environment:
       NODE_ENV: production
       PORT: 5000
-      DB_HOST: localhost
+      DB_HOST: 127.0.0.1
+      DB_PASSWORD: rootpassword
     network_mode: host
     volumes:
       - ./backend/uploads:/app/backend/uploads
