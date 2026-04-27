@@ -10,14 +10,6 @@ const pool = mysql.createPool({
     connectionLimit: 10,
     namedPlaceholders: true
 });
-
-// Debug logging
-console.log('Database config:', {
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD ? '***' : 'empty',
-    database: process.env.DB_NAME
-});
 // Fonction utilitaire pour les requêtes
 export async function query(sql, params = []) {
     const [results] = await pool.execute(sql, params);
