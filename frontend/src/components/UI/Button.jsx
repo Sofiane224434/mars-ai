@@ -226,9 +226,9 @@ const Button = ({
 
         {/* Contenu du texte */}
         <span
-          className={`relative z-10 pointer-events-none overflow-hidden transition-all ease-in-out text-sm md:text-[15px] leading-tight ${
+          className={`relative z-10 pointer-events-none transition-all ease-in-out text-sm md:text-[15px] leading-tight ${
             iconOnly
-              ? "max-w-0 opacity-0 duration-0 delay-0 p-0 m-0 whitespace-nowrap"
+              ? "overflow-hidden max-w-0 opacity-0 duration-0 delay-0 p-0 m-0 whitespace-nowrap"
               : "max-w-[500px] opacity-100 duration-500 delay-150"
           } ${textOffsetClass}`}
         >
@@ -266,9 +266,9 @@ const Button = ({
 
         {/* Contenu du texte */}
         <span
-          className={`relative z-10 pointer-events-none overflow-hidden transition-all ease-in-out text-sm md:text-[15px] leading-tight ${
+          className={`relative z-10 pointer-events-none transition-all ease-in-out text-sm md:text-[15px] leading-tight ${
             iconOnly
-              ? "max-w-0 opacity-0 duration-0 delay-0 p-0 m-0 whitespace-nowrap"
+              ? "overflow-hidden max-w-0 opacity-0 duration-0 delay-0 p-0 m-0 whitespace-nowrap"
               : "max-w-[500px] opacity-100 duration-500 delay-150"
           } ${textOffsetClass}`}
         >
