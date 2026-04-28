@@ -15,10 +15,10 @@ const getBackendOrigin = () => {
   }
 
   if (typeof window !== "undefined") {
-    return `${window.location.protocol}//${window.location.hostname}:5000`;
+    return "";
   }
 
-  return "http://localhost:5000";
+  return "";
 };
 
 export const resolveMediaUrl = (rawPath) => {

@@ -1,6 +1,5 @@
 // services/api.js
-const defaultApiUrl = `${window.location.protocol}//${window.location.hostname}:5000/api`;
-const API_URL = import.meta.env.VITE_API_URL || defaultApiUrl;
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 async function fetchAPI(endpoint, options = {}) {
     const token = localStorage.getItem('token');

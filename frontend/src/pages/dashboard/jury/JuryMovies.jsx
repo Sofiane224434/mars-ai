@@ -11,7 +11,7 @@ import ToggleSwitch from "../../../components/UI/ToggleSwitch.jsx";
 import Pagination from '../../../components/UI/Pagination.jsx';
 import useFestivalPhase from '../../../hooks/useFestivalPhase.js';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
 const ALLOWED_STATUSES = ['approved', 'review', 'rejected', 'pending', 'top50', 'top5'];
 
 function JuryMovies() {

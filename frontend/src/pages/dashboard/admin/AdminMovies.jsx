@@ -20,7 +20,7 @@ function AdminMovies() {
   const navigate = useNavigate();
   const { currentPhase } = useFestivalPhase();
   const [searchParams, setSearchParams] = useSearchParams();
-  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+  const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
   const [filtersOpen, setFiltersOpen] = useState(false);
 
   // 🚀 AJOUT 2 : La mémoire pour le mode de vue (on le met en 'grid' par défaut pour cette page)

@@ -8,8 +8,7 @@ function YoutubeUploadTest() {
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
 
-  const defaultApiBase = `${window.location.protocol}//${window.location.hostname}:5000/api`;
-  const API_BASE = import.meta.env.VITE_API_URL || defaultApiBase;
+  const API_BASE = import.meta.env.VITE_API_URL || '/api';
 
   const handleSubmit = async (event) => {
     event.preventDefault();

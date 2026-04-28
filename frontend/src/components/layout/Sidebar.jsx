@@ -43,7 +43,7 @@ const Sidebar = ({ variant = "admin", className = "" }) => {
   const isJuryPanel = variant === "jury";
   const { id: juryId } = useParams();
   const API_BASE_URL =
-    import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+    import.meta.env.VITE_API_URL || "/api";
   const mobileIconOnlyProps = {
     iconOnly: true,
     iconOnlyButtonSizeClass: "h-9 w-9",
