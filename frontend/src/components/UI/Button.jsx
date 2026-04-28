@@ -205,6 +205,7 @@ const Button = ({
   const pressWrapperClass = [
     "relative",
     className.includes("w-full") ? "block w-full" : "inline-block",
+    isJuryActionVariant && "w-full sm:w-auto",
     !disabled &&
       isJuryActionVariant &&
       `${currentVariant.shadowClass} transition-shadow duration-75`,
@@ -258,7 +259,7 @@ const Button = ({
         onClick={onClick}
         disabled={disabled}
         aria-label={ariaLabel}
-        className={`${classes} ${!disabled && isJuryActionVariant ? "active:translate-y-1.25 transition-transform duration-75" : ""}`}
+        className={`${classes} ${className.includes("w-full") || isJuryActionVariant ? "w-full sm:w-auto" : ""} ${!disabled && isJuryActionVariant ? "active:translate-y-1.25 transition-transform duration-75" : ""}`}
       >
         {/* Couche de fond (Background/Borders) */}
         {currentVariant.bg}
