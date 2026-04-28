@@ -29,18 +29,22 @@ const ConfirmModal = ({
         </div>
 
         {/* Boutons d'action dynamiques */}
-        <div className="flex justify-center gap-4">
-          <button 
+        <div className="flex justify-center gap-3">
+          <Button
+            variant="email-cancel"
             onClick={onClose}
-            className="px-6 py-2 rounded-full border border-gris-magneti text-gris-magneti hover:bg-gris-magneti/10 transition-colors font-medium"
+            interactive
+            type="button"
+            className="h-11"
           >
             {cancelText}
-          </button>
+          </Button>
           <Button
-            interactive
-            variant="gradient-blue"
+            variant="email-send"
             onClick={onConfirm}
-            className="min-w-35"
+            interactive
+            type="button"
+            className="h-11"
           >
             {confirmText}
           </Button>

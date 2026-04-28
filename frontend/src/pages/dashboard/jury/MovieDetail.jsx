@@ -221,7 +221,7 @@ function MovieDetail() {
     ? ![5, 6].includes(movie.statusId)
     : isJudgmentPhase
       ? ![4, 5].includes(movie.statusId)
-      : ![1, 4].includes(movie.statusId);
+      : movie.statusId !== 1;
   const canPromoteTop50 = isJudgmentPhase ? movie.statusId === 4 : movie.statusId === 4;
   const canRemoveTop50 = isJudgmentPhase && movie.statusId === 5;
   const canPromoteTop5 = isTop5Phase && movie.statusId === 5;
@@ -317,7 +317,7 @@ function MovieDetail() {
 
           {!isJudgmentPhase && !isTop5Phase && movie.statusId === 4 && (
             <p className="text-gris-magneti text-xs mt-4 italic">
-              Film validé : vous pouvez le passer en Top 50 si vous le souhaitez.
+              Vous avez déjà validé ce film. Le vote est verrouillé.
             </p>
           )}
 

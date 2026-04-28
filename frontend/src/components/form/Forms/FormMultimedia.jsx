@@ -105,6 +105,7 @@ export default function FormMultimedia({ hide = false, getFunction,
             <InputSuper type={"file"}
                 getValueFunc={setThumbnail}
                 label={t("form.step3.thumbnail")} accept={"image/png, image/jpeg"}
+                required={true}
                 errormessage={errorThumbnail}
             ></InputSuper>
 
@@ -112,6 +113,7 @@ export default function FormMultimedia({ hide = false, getFunction,
             <InputSuper type={"file"}
                 getValueFunc={setScreenshot1}
                 label={t("form.step3.screenshots")}
+                required={true}
                 accept={"image/png, image/jpeg"}></InputSuper>
 
             <InputSuper type={"file"}

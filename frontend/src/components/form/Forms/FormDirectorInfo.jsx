@@ -248,15 +248,18 @@ export default function FormDirectorInfo({ hide = false, getFunction,
             <div>
                 <InputSuper type={"text"} max_string={100}
                     getValueFunc={setLastname}
+                    required={true}
                     label={t("form.step4.lastName")} errormessage={errorLastname}></InputSuper>
 
                 <InputSuper type={"text"} max_string={100}
                     getValueFunc={setFirstname}
+                    required={true}
                     label={t("form.step4.firstName")} errormessage={errorFirstname}></InputSuper>
             </div>
 
             <InputSuper type={"select"} options={genderoptions}
                 getValueFunc={setGender}
+                required={true}
                 label={t("form.step4.gender")} errormessage={errorGender}></InputSuper>
 
             <div>{t("form.step4.socials")}</div>
@@ -266,10 +269,12 @@ export default function FormDirectorInfo({ hide = false, getFunction,
 
             <InputSuper type={"email"} max_string={100}
                 getValueFunc={setEmail}
+                required={true}
                 label={t("form.step4.email")} errormessage={errorEmail}></InputSuper>
 
             <InputSuper type={"tel"} max_string={10}
                 getValueFunc={setTel}
+                required={true}
                 label={t("form.step4.phone")} numberonly={true}
                 errormessage={errorTel}></InputSuper>
 
@@ -280,22 +285,26 @@ export default function FormDirectorInfo({ hide = false, getFunction,
 
             <InputSuper type={"date"}
                 getValueFunc={setBirthdate}
+                required={true}
                 label={t("form.step4.birthdate")} max_numdate={new Date().toISOString().split("T")[0]}
                 errormessage={errorBirthdate}
             ></InputSuper>
 
             <InputSuper type={"text"} max_string={100}
                 getValueFunc={setCountry}
+                required={true}
                 label={t("form.step4.country")}
                 errormessage={errorCountry}></InputSuper>
 
             <InputSuper type={"text"} max_string={100}
                 getValueFunc={setLanguage}
+                required={true}
                 label={t("form.step4.languague")}
                 errormessage={errorLanguage}></InputSuper>
 
             <InputSuper type={"text"} max_string={100}
                 getValueFunc={setAddress}
+                required={true}
                 label={t("form.step4.address")} errormessage={errorAddress}></InputSuper>
 
             <InputSuper type={"text"} max_string={100}
@@ -305,39 +314,46 @@ export default function FormDirectorInfo({ hide = false, getFunction,
 
             <InputSuper type={"text"} max_string={10}
                 getValueFunc={setPostalCode}
+                required={true}
                 label={t("form.step4.postalCode")} errormessage={errorPostalcode}></InputSuper>
 
             <InputSuper type={"text"} max_string={100}
-                getValueFunc={setCity} label={t("form.step4.city")}></InputSuper>
+                getValueFunc={setCity} required={true} label={t("form.step4.city")}></InputSuper>
             {errorCity && <div>{errorCity}</div>}
 
             <InputSuper type={"select"} options={markettingoptions}
                 getValueFunc={setMarketting}
+                required={true}
                 label={t("form.step4.marketingLabel")}
                 errormessage={errorMarketting}
             ></InputSuper>
 
             <InputSuper type={"text"} getValueFunc={setSchool}
+                required={true}
                 label={t("form.step4.school")}
                 errormessage={errorSchool}></InputSuper>
 
             <InputSuper type={"text"} getValueFunc={setJob}
+                required={true}
                 label={t("form.step4.job")}
                 errormessage={errorJob}></InputSuper>
 
             {marketting == "other" &&
                 <InputSuper type={"text"} max_string={200}
                     getValueFunc={setMarkettingOther}
+                    required={true}
                     label={t("form.step4.specifyLabel")} errormessage={markettingOther}></InputSuper>}
 
             <InputSuper type={"checkbox"}
                 getValueFunc={setTosCheck}
+                required={true}
                 label={t("form.step4.tosCheck")}
                 errormessage={errorTosCheck}
             ></InputSuper>
 
             <InputSuper type={"checkbox"}
                 getValueFunc={setRulesCheck}
+                required={true}
                 label={t("form.step4.rulesCheck")} errormessage={errorRulesCheck}></InputSuper>
 
             <div className="mt-4 flex w-full items-center justify-center gap-4">

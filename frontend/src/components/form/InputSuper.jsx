@@ -50,6 +50,13 @@ export default function InputSuper({ name, label, getValueFunc, declareSelfFunc,
 
     const [value, setValue] = useState("");
 
+    const labelNode = label ? (
+        <div className={classLabel ? classLabel : classDefaultLabel}>
+            {label}
+            {required && <span className="ml-1 text-red-500" aria-hidden="true">*</span>}
+        </div>
+    ) : null;
+
     let declared = false;
 
     useEffect(() => {
@@ -144,8 +151,7 @@ export default function InputSuper({ name, label, getValueFunc, declareSelfFunc,
             if (Array.isArray(options)) {
                 return (
                     <div className={`${classBaseContainer} ${classContainer ? classContainer : classDefaultContainer}`.trim()}>
-                        {label && <div className={classLabel ? classLabel : classDefaultLabel}
-                        >{label}</div>}
+                        {labelNode}
                         <select required={required} name={name} value={value}
                             onChange={handleChange}
                             className={classUseInput}>
@@ -167,8 +173,7 @@ export default function InputSuper({ name, label, getValueFunc, declareSelfFunc,
     if (type === "textarea") {
         return (
             <div className={`${classBaseContainer} ${classContainer ? classContainer : classDefaultContainer}`.trim()}>
-                {label && <div className={classLabel ? classLabel : classDefaultLabel}
-                >{label}</div>}
+                {labelNode}
                 <textarea name={name} value={value} maxLength={max_string} minLength={min_string}
                     placeholder={placeholder} required={required} onChange={handleChange}
                     className={classUseInput}></textarea>
@@ -188,7 +193,12 @@ export default function InputSuper({ name, label, getValueFunc, declareSelfFunc,
                         required={required} value={value} onChange={handleChange}
                         className={classUseInput}
                     ></input>
-                    {label && <div className={classLabel ? classLabel : classDefaultLabel}>{label}</div>}
+                    {label && (
+                        <div className={classLabel ? classLabel : classDefaultLabel}>
+                            {label}
+                            {required && <span className="ml-1 text-red-500" aria-hidden="true">*</span>}
+                        </div>
+                    )}
                 </div>
                 {errormessage && <div className={classErrorMessage}>{errormessage}</div>}
             </div>
@@ -205,7 +215,7 @@ export default function InputSuper({ name, label, getValueFunc, declareSelfFunc,
 
         return (
             <div className={`${classBaseContainer} ${classContainer ? classContainer : classDefaultContainer}`.trim()}>
-                {label && <div className={classLabel ? classLabel : classDefaultLabel}>{label}</div>}
+                {labelNode}
                 <div className="flex items-center gap-3">
                     <label className={fileButtonClass}>
                         {t("form.file.choose")}
@@ -226,7 +236,7 @@ export default function InputSuper({ name, label, getValueFunc, declareSelfFunc,
 
     return (
         <div className={`${classBaseContainer} ${classContainer ? classContainer : classDefaultContainer}`.trim()}>
-            {label && <div className={classLabel ? classLabel : classDefaultLabel}>{label}</div>}
+            {labelNode}
             <input name={name} type={type} max={max_numdate} maxLength={max_string}
                 accept={accept} min={min_numdate} minLength={min_string} placeholder={placeholder}
                 required={required} value={value} onChange={handleChange}

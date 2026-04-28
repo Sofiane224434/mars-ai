@@ -223,15 +223,19 @@ const defaultInvitationBody = ({ displayName, customMessage = "" }) =>
   `Nous avons l'immense honneur de vous inviter à faire partie du jury officiel de cette nouvelle édition du festival MarsAI !\n` +
   `Votre expertise sera précieuse pour l'évaluation des courts métrages en compétition.\n\n` +
   (customMessage ? `${customMessage}\n\n` : "") +
-  `Quelle est la prochaine étape ? Pour accéder à votre interface privée et commencer à visionner les films qui vous sont assignés, connectez-vous via le lien sécurisé ci-dessous et en utilisant votre token d'accès personnel :\n\n` +
-  `Lien de connexion : {{loginUrl}}\n` +
-  `Token d'accès personnel : {{invitationToken}} (valide jusqu'au {{expiryDate}})\n\n` +
   `Période de visionnage :\n` +
   `Les œuvres qui vous seront assignées durent au maximum 2 minutes.\n\n` +
-  `Note de l'équipe : L'accès à ce panel de sélection est strictement confidentiel. Merci de ne pas partager votre token ni les contenus visionnés. Si vous pensez avoir reçu cet e-mail par erreur, ignorez-le.\n\n` +
+  `Note de l'équipe : L'accès à ce panel de sélection est strictement confidentiel. Merci de ne pas partager votre lien d'accès ni les contenus visionnés. Si vous pensez avoir reçu cet e-mail par erreur, ignorez-le.\n\n` +
   `Nous vous remercions chaleureusement pour le temps et l'attention que vous accorderez au travail des réalisateurs.\n\n` +
   `Créativement,\n` +
   `L'équipe MarsAI`;
+
+const buildLoginFooter = ({ loginUrl, invitationToken, expiryDate }) =>
+  `\n\n———\n` +
+  `Accès sécurisé à votre espace juré :\n` +
+  `Lien de connexion : ${loginUrl}\n` +
+  `Token d'accès personnel : ${invitationToken}\n` +
+  `Valide jusqu'au : ${expiryDate}`;
 
 const replaceTemplateVariables = (template, variables) => {
   if (!template) return "";
@@ -280,9 +284,6 @@ export const issueInvitationForEmail = async ({
   const displayName = user.email.split("@")[0];
   const templateVariables = {
     displayName,
-    loginUrl,
-    invitationToken,
-    expiryDate,
     email: user.email,
   };
 
@@ -290,10 +291,11 @@ export const issueInvitationForEmail = async ({
     customSubject || defaultInvitationSubject,
     templateVariables,
   );
-  const message = replaceTemplateVariables(
+  const baseBody = replaceTemplateVariables(
     customBody || defaultInvitationBody({ displayName, customMessage }),
     templateVariables,
   );
+  const message = `${baseBody}${buildLoginFooter({ loginUrl, invitationToken, expiryDate })}`;
 
   await sendCustomEmail({
     to: user.email,

@@ -177,6 +177,7 @@ export default function FormMovieInfo({ hide = false, getFunction,
 
             <InputSuper label={t("form.step1.movieTitle")} type={"text"}
                 getValueFunc={setMovieTitle} errormessage={errorMovieTitle}
+                required={true}
                 max_string={100}></InputSuper>
 
             <InputSuper label={t("form.step1.movieTitleeng")}
@@ -185,14 +186,17 @@ export default function FormMovieInfo({ hide = false, getFunction,
 
             <InputSuper type={"textarea"} label={t("form.step1.description")}
                 getValueFunc={setDescription} max_string={300}
+                required={true}
                 errormessage={errorDescription}></InputSuper>
 
             <InputSuper type={"textarea"} getValueFunc={setSynopsis}
                 max_string={500} label={t("form.step1.synopsis")}
+                required={true}
                 errormessage={errorSynopsis}></InputSuper>
 
             <InputSuper type={"textarea"} getValueFunc={setSynopsisEng}
                 max_string={500} label={t("form.step1.synopsisEng")}
+                required={true}
                 errormessage={errorSynopsisEng}></InputSuper>
 
             <InputSuper type={"text"} label={t("form.step1.movieLanguage")}

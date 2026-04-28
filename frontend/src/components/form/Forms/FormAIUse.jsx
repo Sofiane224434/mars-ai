@@ -144,10 +144,12 @@ export default function FormAIUse({ hide = false, getFunction,
             <InputSuper type={"select"} options={classificationsoptions}
                 label={t("form.step2.classificationLabel")}
                 getValueFunc={setClassification}
+                required={true}
                 errormessage={errorClassification}></InputSuper>
 
             <InputSuper type={"textarea"} max_string={500} getValueFunc={setPrompts}
                 label={t("form.step2.promptsLabel")}
+                required={true}
                 errormessage={errorPrompts}></InputSuper>
 
             <div className="mt-4 flex w-full items-center justify-center gap-4">
