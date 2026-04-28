@@ -79,19 +79,17 @@ const Sidebar = ({ variant = "admin", className = "" }) => {
     `mt-1 relative min-h-screen h-full transition-all duration-500 ease-in-out ${className}`.trim();
   const containerStyle = collapsed ? { width: "110px" } : { width: "320px" };
   const contentClass =
-    `${currentVariant.content} flex-1 px-2 items-center gap-0 ${
-      collapsed ? "lg:px-1 lg:items-center lg:gap-3" : ""
-    }`.trim();
+    `${currentVariant.content} flex-1 px-2 items-center gap-0 ${collapsed ? "lg:px-1 lg:items-center lg:gap-3" : ""
+      }`.trim();
 
   return (
     <>
       {/* ── MOBILE : barre déroulante légère du haut ── */}
       <div
-        className={`fixed top-0 left-0 right-0 max-h-80 z-50 bg-noir-bleute transition-all duration-300 lg:hidden overflow-hidden ${
-          mobileOpen
+        className={`fixed top-0 left-0 right-0 max-h-80 z-50 bg-noir-bleute transition-all duration-300 lg:hidden overflow-hidden ${mobileOpen
             ? "translate-y-0 shadow-lg"
             : "-translate-y-full pointer-events-none"
-        }`}
+          }`}
       >
         {/* En-tête fixe avec bouton fermer */}
         <div className="flex items-center justify-end px-3 pt-2 pb-1 shrink-0">
@@ -200,9 +198,8 @@ const Sidebar = ({ variant = "admin", className = "" }) => {
       {/* Hamburger – mobile uniquement */}
       <button
         type="button"
-        className={`fixed top-4 left-4 z-40 lg:hidden flex flex-col gap-1.5 items-center justify-center w-10 h-10 rounded-md bg-bleu-ocean transition-all duration-300 ${
-          mobileOpen ? "opacity-0 pointer-events-none" : "opacity-100"
-        }`}
+        className={`fixed top-4 left-4 z-40 lg:hidden flex flex-col gap-1.5 items-center justify-center w-10 h-10 rounded-md bg-bleu-ocean transition-all duration-300 ${mobileOpen ? "opacity-0 pointer-events-none" : "opacity-100"
+          }`}
         onClick={() => setMobileOpen(true)}
         aria-label="Ouvrir le menu"
         aria-expanded={mobileOpen}

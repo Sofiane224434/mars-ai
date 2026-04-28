@@ -15,7 +15,7 @@ export const useAdminMovieNavigation = (currentMovieId) => {
       try {
         setIsLoading(true);
         const token = localStorage.getItem('token');
-        
+
         const response = await axios.get(`${API_BASE_URL}/admin/movies`, {
           headers: token ? { Authorization: `Bearer ${token}` } : undefined,
           withCredentials: true
@@ -38,7 +38,7 @@ export const useAdminMovieNavigation = (currentMovieId) => {
     };
 
     fetchAllMovies();
-  }, []); 
+  }, []);
 
   const currentId = parseInt(currentMovieId, 10);
   const currentIndex = movieIds.indexOf(currentId);
