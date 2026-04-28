@@ -341,7 +341,7 @@ const EmailTemplateModal = ({ onClose, movie, variant = 'movie' }) => {
 
         {isJuryVariant && (
           <div className="rounded-xl border border-bleu-canard/30 bg-bleu-canard/10 px-3 py-2 text-xs text-bleu-ciel md:text-sm">
-            Pas besoin d&apos;insérer de lien ni de token : le lien de connexion sécurisé, le token d&apos;accès personnel et la date d&apos;expiration seront générés puis ajoutés automatiquement à la fin de l&apos;email après envoi. Le prénom du juré ({{'{{displayName}}'}}) sera également remplacé automatiquement avant l&apos;envoi.
+            Pas besoin d&apos;insérer de lien ni de token : le lien de connexion sécurisé, le token d&apos;accès personnel et la date d&apos;expiration seront générés puis ajoutés automatiquement à la fin de l&apos;email après envoi. Le prénom du juré ({'{{displayName}}'}) sera également remplacé automatiquement avant l&apos;envoi.
           </div>
         )}
 
