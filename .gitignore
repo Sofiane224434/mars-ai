@@ -8,5 +8,6 @@
 /uploads/submissions
 # Ignore les fichier documentations utilisateurs
 .help/*
+/agent   
+/agent/session/
 /conception/aides
-/contexte-projet.md
